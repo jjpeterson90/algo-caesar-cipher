@@ -6,8 +6,10 @@ exports.caesarCipher = function(str, cipherNum) {
         if (alpha.includes(char.toLowerCase())) {
             index = alpha.indexOf(char.toLowerCase());
             index += cipherNum;
-            if (index > 26) index -= 26;
-            if (index < 0) index += 26;
+            while (index > 26 || index < 0) {
+                if (index > 26) index -= 26;
+                if (index < 0) index += 26;
+            }
             if (isUpperCase(char)) codedStr += alpha[index].toUpperCase();
             else codedStr += alpha[index];
         } else {
