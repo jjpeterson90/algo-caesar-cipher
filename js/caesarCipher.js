@@ -1,6 +1,6 @@
 exports.caesarCipher = function(str, cipherNum) {
     let alpha = 'abcdefghijklmnopqrstuvwxyz';
-    let codedStr = '';
+    let encodedStr = '';
 
     str.split('').forEach((char,i) => {
         if (alpha.includes(char.toLowerCase())) {
@@ -10,10 +10,10 @@ exports.caesarCipher = function(str, cipherNum) {
                 if (index > 26) index -= 26;
                 if (index < 0) index += 26;
             }
-            if (isUpperCase(char)) codedStr += alpha[index].toUpperCase();
-            else codedStr += alpha[index];
+            if (isUpperCase(char)) encodedStr += alpha[index].toUpperCase();
+            else encodedStr += alpha[index];
         } else {
-            codedStr += char
+            encodedStr += char
         }
     })
 
@@ -22,6 +22,6 @@ exports.caesarCipher = function(str, cipherNum) {
         return false
     }
 
-    return codedStr
+    return encodedStr
 
 };

@@ -1,5 +1,3 @@
-import re
-
 def caesar_cipher(string, shift_amount):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     coded_string = ''
